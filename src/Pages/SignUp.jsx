@@ -40,7 +40,7 @@ export default class SignUp extends Component {
       .min(8)
       .matches(
         regularExpression,
-        "Password should contain small letters,capital letters,numbers and special charachter"
+        "يجب أن تحتوي كلمة المرور على أحرف صغيرة وأحرف كبيرة وأرقام وشارات خاصة        "
       )
       .required(),
     passwordRepeat: yup
@@ -49,7 +49,7 @@ export default class SignUp extends Component {
       .required(),
     checkbox: yup
       .boolean()
-      .oneOf([true], "You should check the checkbox")
+      .oneOf([true], "يجب عليك تحديد خانة الاختيار ")
       .required(),
   });
 
@@ -102,8 +102,8 @@ export default class SignUp extends Component {
       .then(() => {
         console.log("valid");
         swal({
-          title: "Success!",
-          text: "Registed Successfully",
+          title: "نجاح العملية!",
+          text: "تم التسجيل بنجاح ",
           icon: "success",
           timer: 2000,
           button: false,
@@ -118,9 +118,8 @@ export default class SignUp extends Component {
         }));
       })
       .catch((e) => {
-        console.log(e.errors);
-        swal({
-          title: "Error!",
+         swal({
+          title: "خطأ!",
           text: `${e.errors}`,
           icon: "error",
           button: false,

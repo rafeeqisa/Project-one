@@ -34,10 +34,10 @@ export default class SignIn extends Component {
     email: yup.string().email().required(),
     password: yup
       .string()
-      .min(8, "Password should be more than 8 characters")
+      .min(8, "يجب أن تكون كلمة المرور أكثر من 8 أحرف")
       .matches(
         regularExpression,
-        "Password should be strong (numbers,capital and small letters ,sympol"
+        "يجب أن تكون كلمة المرور قوية (أرقام ، أحرف كبيرة وصغيرة )"
       )
       .required(),
   });
